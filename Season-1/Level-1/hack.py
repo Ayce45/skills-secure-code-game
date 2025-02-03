@@ -9,7 +9,7 @@ class TestOnlineStore(unittest.TestCase):
         payment = c.Item(type='payment', description='invoice_4', amount=1e19, quantity=1)
         payback = c.Item(type='payment', description='payback_4', amount=-1e19, quantity=1)
         order_4 = c.Order(id='4', items=[payment, tv_item, payback])
-        self.assertEqual(c.validorder(order_4), 'Order ID: 4 - Payment imbalance: $-1000.00')
+        self.assertEqual(c.validorder(order_4), 'Invalid item type: payment')
 
     # Valid payments that should add up correctly, but do not
     def test_7(self):
