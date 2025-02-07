@@ -48,6 +48,8 @@ class TaxPayer:
     def get_tax_form_attachment(self, path=None):
         tax_data = None
 
+        print(self)
+
         if not path:
             raise Exception("Error: Tax form is required for all users")
 
