@@ -38,6 +38,8 @@ class TaxPayer:
         print(base_dir)
         print(prof_picture_path)
         print(prof_picture_path)
+        print(prof_picture_path)
+        print(prof_picture_path)
 
         with open(prof_picture_path, 'rb') as pic:
             picture = bytearray(pic.read())
