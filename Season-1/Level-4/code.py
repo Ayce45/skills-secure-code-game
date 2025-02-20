@@ -53,6 +53,8 @@ class Create(object):
                 FROM sqlite_master 
                 WHERE type='table'AND name='stocks';
                 ''').fetchall()
+            
+            # SQL INJECTION HERE
 
             # if tables do not exist, create them and insert dummy data
             if table_fetch == []:
