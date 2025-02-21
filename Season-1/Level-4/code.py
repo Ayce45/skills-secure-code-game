@@ -54,8 +54,6 @@ class Create(object):
                 WHERE type='table'AND name='stocks';
                 ''').fetchall()
             
-            # SQL INJECTION HERE
-
             # if tables do not exist, create them and insert dummy data
             if table_fetch == []:
                 cur.execute(
@@ -170,6 +168,9 @@ class DB_CRUD_ops(object):
             res = "[METHOD EXECUTED] update_stock_price\n"
             # UPDATE stocks SET price = 310.0 WHERE symbol = 'MSFT'
             query = "UPDATE stocks SET price = '%d' WHERE symbol = '%s'" % (price, stock_symbol)
+
+            # SQL INJECTION HERE
+            
             res += "[QUERY] " + query + "\n"
 
             cur.execute(query)
